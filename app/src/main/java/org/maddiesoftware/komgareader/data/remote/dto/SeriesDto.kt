@@ -5,7 +5,7 @@ import org.maddiesoftware.komgareader.domain.model.Series
 data class SeriesDto(
     val booksCount: Int?,
     val booksInProgressCount: Int?,
-    val booksMetadata: org.maddiesoftware.komgareader.data.remote.dto.BookMetadataAggregationDto?,
+    val booksMetadata: BookMetadataAggregationDto?,
     val booksReadCount: Int?,
     val booksUnreadCount: Int?,
     val created: String?,
@@ -14,9 +14,27 @@ data class SeriesDto(
     val id: String?,
     val lastModified: String?,
     val libraryId: String?,
-    val metadata: org.maddiesoftware.komgareader.data.remote.dto.SeriesMetadataDto?,
+    val metadata: SeriesMetadataDto?,
     val name: String?,
     val url: String?
 ){
+    fun toSeries(): Series{
+        return Series(
+            booksCount = booksCount,
+            booksInProgressCount = booksInProgressCount,
+            booksMetadata = booksMetadata,
+            booksReadCount = booksReadCount,
+            booksUnreadCount = booksUnreadCount,
+            created = created,
+            deleted = deleted,
+            fileLastModified = fileLastModified,
+            id = id,
+            lastModified = lastModified,
+            libraryId = libraryId,
+            metadata = metadata,
+            name = name,
+            url = url
+        )
+    }
 
 }

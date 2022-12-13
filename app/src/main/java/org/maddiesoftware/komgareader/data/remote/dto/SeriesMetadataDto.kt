@@ -1,5 +1,7 @@
 package org.maddiesoftware.komgareader.data.remote.dto
 
+import org.maddiesoftware.komgareader.domain.model.SeriesMetadata
+
 data class SeriesMetadataDto(
     val ageRating: Int?,
     val ageRatingLock: Boolean?,
@@ -25,4 +27,20 @@ data class SeriesMetadataDto(
     val titleSortLock: Boolean?,
     val totalBookCount: Int?,
     val totalBookCountLock: Boolean?
-)
+){
+    fun toSeriesMetadata(): SeriesMetadata{
+        return SeriesMetadata(
+            lastModified = lastModified,
+            publisher = publisher,
+            status = status,
+            summary = summary,
+            tags = tags,
+            title = title,
+            totalBookCount = totalBookCount,
+            readingDirection = readingDirection,
+            created = created,
+            genres = genres
+
+        )
+    }
+}

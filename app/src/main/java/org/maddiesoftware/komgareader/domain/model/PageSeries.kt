@@ -1,15 +1,18 @@
 package org.maddiesoftware.komgareader.domain.model
 
+import org.maddiesoftware.komgareader.data.remote.dto.PageableDto
+import org.maddiesoftware.komgareader.data.remote.dto.SortDtoX
+
 data class PageSeries(
-    val series: List<org.maddiesoftware.komgareader.domain.model.Series>?,
+    val series: List<Series>?,
     val empty: Boolean?,
     val first: Boolean?,
     val last: Boolean?,
     val number: Int?,
     val numberOfElements: Int?,
-    val pageable: org.maddiesoftware.komgareader.domain.model.Pageable?,
+    val pageable: PageableDto?,
     val size: Int?,
-    val sort: org.maddiesoftware.komgareader.domain.model.SortX?,
+    val sort: SortDtoX?,
     val totalElements: Int?,
     val totalPages: Int?
 )

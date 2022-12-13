@@ -5,6 +5,5 @@ data class Pageable(
     val pageNumber: Int?,
     val pageSize: Int?,
     val paged: Boolean?,
-    val sort: org.maddiesoftware.komgareader.domain.model.SortX?,
     val unpaged: Boolean?
 )

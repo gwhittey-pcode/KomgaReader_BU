@@ -1,9 +1,12 @@
 package org.maddiesoftware.komgareader.domain.model
 
+import org.maddiesoftware.komgareader.data.remote.dto.BookMetadataAggregationDto
+import org.maddiesoftware.komgareader.data.remote.dto.SeriesMetadataDto
+
 data class Series(
     val booksCount: Int?,
     val booksInProgressCount: Int?,
-    val booksMetadata: org.maddiesoftware.komgareader.domain.model.BookMetadataAggregation?,
+    val booksMetadata: BookMetadataAggregationDto?,
     val booksReadCount: Int?,
     val booksUnreadCount: Int?,
     val created: String?,
@@ -12,7 +15,7 @@ data class Series(
     val id: String?,
     val lastModified: String?,
     val libraryId: String?,
-    val metadata: org.maddiesoftware.komgareader.domain.model.SeriesMetadata?,
+    val metadata: SeriesMetadataDto?,
     val name: String?,
     val url: String?
 )
